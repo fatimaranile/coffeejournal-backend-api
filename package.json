@@ -1,0 +1,34 @@
+{
+  "name": "coffeejournal-backend-api",
+  "version": "1.0.0",
+  "description": "Backend API for coffee journal.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatimaranile/coffeejournal-backend-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sequelize",
+    "mysql",
+    "rest",
+    "api"
+  ],
+  "author": "Fatima Ranile",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fatimaranile/coffeejournal-backend-api/issues"
+  },
+  "homepage": "https://github.com/fatimaranile/coffeejournal-backend-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.5"
+  }
+}
