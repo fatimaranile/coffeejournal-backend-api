@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const db = require("./app/models");
 
 const app = express();
 
@@ -11,6 +12,8 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+db.sequelize.sync();
 
 // Sample GET route
 app.get("/", (request, response) => {
