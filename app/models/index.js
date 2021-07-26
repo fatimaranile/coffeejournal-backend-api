@@ -24,6 +24,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.coffeejournals = require("./coffeejournal.model.js")(sequelize, Sequelize);
+db.coffeejournals = require("./user.model.js")(sequelize, Sequelize);
 
 module.exports = db;
