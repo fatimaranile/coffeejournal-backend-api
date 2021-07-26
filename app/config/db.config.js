@@ -4,7 +4,10 @@ module.exports = {
   PASSWORD: "password",
   DB: "coffee_journal_db",
   dialect: "mysql",
-  poo: {
+  define: {
+    timestamps: false,
+  },
+  pool: {
     max: 5,
     min: 0,
     acquire: 30000,
