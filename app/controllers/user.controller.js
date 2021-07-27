@@ -31,7 +31,20 @@ exports.create = (req, res) => {
     });
 };
 
-exports.findAll = (req, res) => {};
+exports.findAll = (req, res) => {
+  const { email } = req.query;
+  var condition = email ? { email: { [Op.like]: `%${email}%` } } : null;
+
+  User.findAll({ where: condition })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "An error occured while retrieving all users.",
+      });
+    });
+};
 
 exports.findOne = (req, res) => {};
 
