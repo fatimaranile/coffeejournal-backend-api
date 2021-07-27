@@ -46,6 +46,23 @@ exports.findAll = (req, res) => {
     });
 };
 
-exports.findOne = (req, res) => {};
+exports.login = (req, res) => {
+  const { email, password } = req.body;
+  const condition = {
+    email: { [Op.like]: `%${email}%` },
+    password: { [Op.like]: `%${password}%` },
+  };
+
+  User.findAll({ where: condition })
+    .then((data) => {
+      // research on this why it's returning array instead of object.
+      res.send(data[0]);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Some error occured while logging in.",
+      });
+    });
+};
 
 exports.update = (req, res) => {};
