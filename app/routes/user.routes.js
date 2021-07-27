@@ -4,5 +4,5 @@ module.exports = (app) => {
 
   router.post("/", users.create);
 
-  app.use("/api/users", router);
+  app.use("/users/create", router);
 };
