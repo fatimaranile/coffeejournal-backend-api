@@ -8,6 +8,8 @@ module.exports = (app) => {
   router.get("/", users.findAll);
   // login user
   router.post("/login", users.login);
+  // update user
+  router.put("/:id", users.update);
 
   app.use("/coffeejournal/users", router);
 };

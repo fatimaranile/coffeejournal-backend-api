@@ -1,6 +1,7 @@
 const db = require("../models");
 
 const User = db.users;
+// research Op
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
@@ -65,4 +66,26 @@ exports.login = (req, res) => {
     });
 };
 
-exports.update = (req, res) => {};
+// check why update only has an int as a resolved value.
+exports.update = (req, res) => {
+  const { id } = req.params;
+
+  User.update(req.body, { where: { id: id } })
+    .then((num) => {
+      console.log(`debug::resolvedValue: ${num}`);
+      if (num == 1) {
+        res.send({
+          message: "The information of the user is updated!",
+        });
+      } else {
+        res.send({
+          message: "Cannot update user information.",
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Error updating user information.",
+      });
+    });
+};
