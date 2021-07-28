@@ -1,3 +1,4 @@
+// .gitignore actual values.
 module.exports = {
   HOST: "localhost",
   USER: "root",

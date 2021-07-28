@@ -72,7 +72,6 @@ exports.update = (req, res) => {
 
   User.update(req.body, { where: { id: id } })
     .then((num) => {
-      console.log(`debug::resolvedValue: ${num}`);
       if (num == 1) {
         res.send({
           message: "The information of the user is updated!",
