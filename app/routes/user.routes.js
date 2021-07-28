@@ -1,17 +1,17 @@
 module.exports = (app) => {
-  const users = require("../controllers/user.controller.js");
+  const coffeejournal = require("../controllers/coffeejournal.controller.js");
   var router = require("express").Router();
 
   // create new user
-  router.post("/", users.create);
+  router.post("/", coffeejournal.create);
   // retrieve all users
-  router.get("/", users.findAll);
+  router.get("/", coffeejournal.findAll);
   // login user
-  router.post("/login", users.login);
+  router.post("/login", coffeejournal.login);
   // update user
-  router.put("/:id", users.update);
+  router.put("/:id", coffeejournal.update);
   // delete user
-  router.delete("/:id", users.delete);
+  router.delete("/:id", coffeejournal.delete);
 
-  app.use("/coffeejournal/users", router);
+  app.use("/coffeejournal/user", router);
 };
