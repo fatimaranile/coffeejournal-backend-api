@@ -10,6 +10,8 @@ module.exports = (app) => {
   router.post("/login", users.login);
   // update user
   router.put("/:id", users.update);
+  // delete user
+  router.delete("/:id", users.delete);
 
   app.use("/coffeejournal/users", router);
 };

@@ -89,3 +89,25 @@ exports.update = (req, res) => {
       });
     });
 };
+
+exports.delete = (req, res) => {
+  const { id } = req.params;
+
+  User.destroy({ where: { id: id } })
+    .then((num) => {
+      if (num == 1) {
+        res.send({
+          message: "User was successfully deleted!",
+        });
+      } else {
+        res.send({
+          message: "Deleting user is not successful.",
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Error encountered while deleting user.",
+      });
+    });
+};
