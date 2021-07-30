@@ -18,13 +18,13 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING,
       },
       yield: {
-        type: Sequelize.INT,
+        type: Sequelize.INTEGER,
       },
       notes: {
         type: Sequelize.STRING,
       },
       user_id: {
-        type: Sequelize.INT,
+        type: Sequelize.INTEGER,
       },
     },
     {
