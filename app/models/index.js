@@ -26,5 +26,12 @@ db.sequelize = sequelize;
 
 // gets the user model definition.
 db.users = require("./user.model.js")(sequelize, Sequelize);
+db.journal = require("./journal.model.js")(sequelize, Sequelize);
+
+db.users.hasMany(db.journal, { as: "journal" });
+db.journal.belongsTo(db.users, {
+  foreignKey: "user_id",
+  as: "user",
+});
 
 module.exports = db;
