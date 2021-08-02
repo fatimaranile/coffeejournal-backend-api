@@ -23,7 +23,7 @@ module.exports = (sequelize, Sequelize) => {
       notes: {
         type: Sequelize.STRING,
       },
-      user_id: {
+      rate: {
         type: Sequelize.INTEGER,
       },
     },

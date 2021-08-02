@@ -1,6 +1,8 @@
 const db = require("../models");
 
 const User = db.users;
+const Journal = db.journals;
+
 // research Op
 const Op = db.Sequelize.Op;
 
@@ -54,7 +56,7 @@ exports.login = (req, res) => {
     password: { [Op.like]: `%${password}%` },
   };
 
-  User.findAll({ where: condition })
+  User.findAll({ where: condition, include: ["journal"] })
     .then((data) => {
       // research on this why it's returning array instead of object.
       res.send(data[0]);
