@@ -24,7 +24,7 @@ app.get("/", (request, response) => {
 });
 
 // calls the user routes file with the app as an argument.
-require("./app/routes/user.routes")(app);
+require("./app/routes/route")(app);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

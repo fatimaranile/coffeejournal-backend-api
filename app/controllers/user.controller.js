@@ -1,7 +1,6 @@
 const db = require("../models");
 
 const User = db.users;
-const Journal = db.journals;
 
 // research Op
 const Op = db.Sequelize.Op;
