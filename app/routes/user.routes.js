@@ -1,15 +1,15 @@
-const coffeejournal = require("../controllers/user.controller.js");
+const user = require("../controllers/user.controller.js");
 var router = require("express").Router();
 
 // create new user
-router.post("/signup", coffeejournal.create);
+router.post("/signup", user.create);
 // retrieve all users
-router.get("/", coffeejournal.findAll);
+router.get("/", user.findAll);
 // login user
-router.post("/login", coffeejournal.login);
+router.post("/login", user.login);
 // update user
-router.put("/:id", coffeejournal.update);
+router.put("/:id", user.update);
 // delete user
-router.delete("/:id", coffeejournal.delete);
+router.delete("/:id", user.delete);
 
 module.exports = router;
